@@ -9,7 +9,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: notverysecure
-      MONGO_INITDB_DATABASE: records
+      MONGO_INITDB_DATABASE: records_db
     volumes:
       - ./config/mongo-init.js:/docker-entrypoint-initdb.d/init-mongo-db-with-collections.js:ro
 
@@ -23,3 +23,5 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: notverysecure
       ME_CONFIG_MONGODB_URL: mongodb://root:notverysecure@mongo:27017/
       ME_CONFIG_BASICAUTH: false
+    depends_on:
+      - mongo
