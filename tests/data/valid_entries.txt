@@ -1,0 +1,43 @@
+<tr class="athing" id="40828493">
+    <td align="right" valign="top" class="title"><span class="rank">3.</span></td>
+    <td valign="top" class="votelinks">
+        <center><a id="up_40828493" href="vote?id=40828493&amp;how=up&amp;goto=news">
+            <div class="votearrow" title="upvote"></div>
+        </a></center>
+    </td>
+    <td class="title"><span class="titleline"><a href="https://github.com/WerWolv/ImHex">A Hex Editor for Reverse Engineers</a><span
+            class="sitebit comhead"> (<a href="from?site=github.com/werwolv"><span class="sitestr">github.com/werwolv</span></a>)</span></span>
+    </td>
+</tr>
+<tr>
+    <td colspan="2"></td>
+    <td class="subtext"><span class="subline">
+    <span class="score" id="score_40828493">209 points</span> by <a href="user?id=wsc981"
+                                                      class="hnuser">wsc981</a> <span class="age"
+                                                                                      title="2024-06-29T07:25:49"><a
+            href="item?id=40828493">9 hours ago</a></span> <span id="unv_40828493"></span> | <a
+            href="hide?id=40828493&amp;goto=news">hide</a> | <a href="item?id=40828493">40&nbsp;comments</a>        </span>
+    </td>
+</tr>
+<tr class="spacer" style="height:5px"></tr>
+<tr class="athing" id="40830996">
+    <td align="right" valign="top" class="title"><span class="rank">4.</span></td>
+    <td valign="top" class="votelinks">
+        <center><a id="up_40830996" href="vote?id=40830996&amp;how=up&amp;goto=news">
+            <div class="votearrow" title="upvote"></div>
+        </a></center>
+    </td>
+    <td class="title"><span class="titleline"><a href="https://www.protectmylink.xyz/">Show HN: Protect your links with a password</a><span
+            class="sitebit comhead"> (<a href="from?site=protectmylink.xyz"><span class="sitestr">protectmylink.xyz</span></a>)</span></span>
+    </td>
+</tr>
+<tr>
+    <td colspan="2"></td>
+    <td class="subtext"><span class="subline">
+        <span class="score" id="score_40830996">17 points</span> by <a href="user?id=jcabrera"
+                                                     class="hnuser">jcabrera</a> <span class="age"
+                                                                                       title="2024-06-29T14:47:04"><a
+            href="item?id=40830996">1 hour ago</a></span> <span id="unv_40830996"></span> | <a
+            href="hide?id=40830996&amp;goto=news">hide</a> | <a href="item?id=40830996">18&nbsp;comments</a>        </span>
+    </td>
+</tr>
