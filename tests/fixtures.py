@@ -1,5 +1,7 @@
+import functools
 import pytest
 
+from app.filters import filter_by_words
 from app.scraper import HackerNewsScraper
 from unittest import mock
 from .utils import read_file
@@ -27,3 +29,11 @@ def mocked_scraper_network_error():
     scraper = HackerNewsScraper(base_url="http://www.example.com")
     scraper.session.get = mock.MagicMock(return_value=MockedResponse(ok_result=False, text=""))
     return scraper
+
+@pytest.fixture
+def filter_entries_greater_than_5_words():
+    return functools.partial(filter_by_words, num_words=5, comparison="gt")
+
+@pytest.fixture
+def filter_entries_leq_than_5_words():
+    return functools.partial(filter_by_words, num_words=5, comparison="lte")
