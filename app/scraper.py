@@ -16,7 +16,7 @@ class HackerNewsScraper:
         self.session = requests.Session()
         self.base_url = base_url
 
-    def get_entries(self, num_entries: int = 30, page: int = 0) -> List[HackerNewsEntry]:
+    def get_entries(self, num_entries: int = 30, page: int = 1) -> List[HackerNewsEntry]:
         """ Gets news entries from the hacker news site.
 
         :param num_entries: Number of entries to be retrieved.

@@ -1,8 +1,10 @@
 import argparse
 import functools
+import os
 
 from app.filters import filter_by_words
 from app.pipeline import EntryPipeline
+from app.repository import MongoDBRepository, SQLiteRepository
 from app.scraper import HackerNewsScraper
 from dotenv import dotenv_values
 
@@ -19,11 +21,11 @@ def load_params():
 if __name__ == "__main__":
     # load input arguments and config
     args = load_params()
-    config = dotenv_values(".env")
+    config = dotenv_values(os.path.join("config", ".env"))
 
     # Get entries from hacker news
     scraper = HackerNewsScraper(base_url=config["BASE_URL"])
-    entries = scraper.get_entries(page=0, num_entries=args.num_entries)
+    entries = scraper.get_entries(page=1, num_entries=args.num_entries)
 
     # define entry processing pipelines
     pipelines = [
@@ -36,9 +38,14 @@ if __name__ == "__main__":
     ]
 
     # process entries
+    repository = SQLiteRepository(config["SQLITE_DATABASE"]) if args.database == "sqlite" else MongoDBRepository(config["MONGODB_URI"])
     for pipe in pipelines:
-        print(f"\nFiltering entries with {pipe.name}: '{pipe.description}'")
+        print(f"Filtering entries with {pipe.name}: '{pipe.description}'")
         print("-" * 150)
         result = pipe.transform(entries)
         for idx, entry in enumerate(result):
-            print(idx, entry)
+            print(f"{idx + 1}. {entry}")
+
+        print("\nSaving results to database...")
+        repository.save_entries(result, pipe.name)
+        print("Results saved\n\n")
