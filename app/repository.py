@@ -61,4 +61,5 @@ class MongoDBRepository:
             }
             for idx, e in enumerate(entries)
         ]
-        self.collection.insert_many(entries_docs)
+        if len(entries_docs) > 0:
+            self.collection.insert_many(entries_docs)
