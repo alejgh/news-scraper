@@ -3,6 +3,7 @@ import requests
 from .domain import HackerNewsEntry
 from .error import NetworkRequestError
 from .parsers import parse_entries
+from requests.adapters import HTTPAdapter, Retry
 from typing import List
 
 class HackerNewsScraper:
@@ -13,8 +14,14 @@ class HackerNewsScraper:
 
         :param base_url: Base url of the hackers new website to be scraped
         """
-        self.session = requests.Session()
         self.base_url = base_url
+        self.session = requests.Session()
+
+        # add exponential backoff to handle network issues and server errors
+        retries = Retry(total=5,
+                        backoff_factor=0.1,
+                        status_forcelist=[ 500, 502, 503, 504 ])
+        self.session.mount("https://", HTTPAdapter(max_retries=retries))
 
     def get_entries(self, num_entries: int = 30, page: int = 1) -> List[HackerNewsEntry]:
         """ Gets news entries from the hacker news site.
