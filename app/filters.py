@@ -19,7 +19,7 @@ def filter_by_words(entry: HackerNewsEntry, num_words: int = 5, comparison: Unio
 def _is_word(token: str) -> bool:
     """ Returns whether the given token is a word or not.
 
-    This is a näive implementation that checks if the token contains at least one alphanumeric character for it to be
+    This is a naïve implementation that checks if the token contains at least one alphanumeric character for it to be
     considered a word.
     :param token:
     :return: True if the token is considered to be a word, and False otherwise.
